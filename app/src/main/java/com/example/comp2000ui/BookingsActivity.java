@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -34,5 +35,22 @@ public class BookingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button cancelButton = findViewById(R.id.cancelButton);
+
+        cancelButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+            show();
+            }
+        });
+    }
+
+    public void show(){ //send cancel message
+        CharSequence bookSendingMessage = "Sending Cancel Request...";
+        int sendDuration = Toast.LENGTH_SHORT;
+        Toast sendMessage = Toast.makeText(this, bookSendingMessage, sendDuration);
+        sendMessage.show();
     }
 }
