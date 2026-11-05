@@ -45,5 +45,16 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button myBookingsButton = findViewById(R.id.bookingsButton);
+
+        myBookingsButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity2.this, BookingsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
